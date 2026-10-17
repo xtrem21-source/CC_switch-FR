@@ -1,6 +1,6 @@
 # Journal des versions
 
-## Documentation — 2026-10-17 (aucun changement de version)
+## v4.0.14-fr.2 — 2026-10-17 (documentation, binaire inchangé)
 
 - Ajout de **`README.en.md`** : notice anglaise complète, écrite pour un lecteur anglophone
   (installation, reconstruction, restauration, limites, intégrité).
@@ -10,6 +10,7 @@
 - Nouveaux guides : `docs/AUTRES-LANGUES.md` (français) et `docs/OTHER-LANGUAGES.md` (anglais),
   avec les ancres exactes des six fichiers à modifier et la liste de ce qui reste câblé sur `fr`
   dans les scripts et l'outillage.
+- **Binaire inchangé** : celui de `v4.0.14-fr.1`, non dupliqué dans cette release.
 
 ## v4.0.14-fr.1 — 2026-10-17
 

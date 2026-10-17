@@ -16,7 +16,7 @@ d'origine (中文, English, 日本語, Türkçe, 繁體中文) restent disponibl
 | Élément | Valeur |
 |---|---|
 | Version upstream ciblée | **4.0.14** |
-| Version de cette traduction | **4.0.14-fr.1** |
+| Version de cette traduction | **4.0.14-fr.2** (documentation ; binaire `fr.1`) |
 | Clés traduites | **4 200** (`src/i18n/locales/fr.json`) |
 | Binaire compilé | release **`v4.0.14-fr.1`** — `cc-switch.exe` (41,7 Mo) |
 | Licence | MIT (upstream et traduction) |

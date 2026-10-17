@@ -16,7 +16,7 @@ languages (中文, English, 日本語, Türkçe, 繁體中文) stay available.
 | Item | Value |
 |---|---|
 | Upstream version targeted | **4.0.14** |
-| Version of this translation | **4.0.14-fr.1** |
+| Version of this translation | **4.0.14-fr.2** (documentation; binary `fr.1`) |
 | Translated keys | **4,200** (`src/i18n/locales/fr.json`) |
 | Compiled binary | release **`v4.0.14-fr.1`** — `cc-switch.exe` (41.7 MB) |
 | Licence | MIT (upstream and translation) |
