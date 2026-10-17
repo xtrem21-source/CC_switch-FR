@@ -7,6 +7,8 @@ d'origine (中文, English, 日本語, Türkçe, 繁體中文) restent disponibl
 > Projet **indépendant**, non affilié à `farion1231/cc-switch`. Le code d'origine est sous
 > licence MIT ; cette traduction en dérive. Voir [NOTICE.md](NOTICE.md).
 
+**English :** [README.en.md](README.en.md) · **Autres langues :** [docs/AUTRES-LANGUES.md](docs/AUTRES-LANGUES.md) · [English guide](docs/OTHER-LANGUAGES.md)
+
 ---
 
 ## Versions
@@ -89,6 +91,24 @@ Lexique harmonisé : « fournisseur » (jamais « prestataire »), « Session »
 Le détail reproductible est dans `fichiers-modifies/cc-switch-fr.patch` (diff complet, applicable
 avec `git apply`).
 
+## Autres langues
+
+**Ce n'est pas un mécanisme franco-français.** Le patch fait trois choses, dont aucune ne dépend
+du français :
+
+1. ajouter un fichier de locale dans `src/i18n/locales/` ;
+2. l'enregistrer dans i18next et dans le formulaire de réglages ;
+3. choisir une langue par défaut.
+
+Le français n'est que le pack livré ici. Pour une autre langue, remplace `fr` par ton code dans
+six fichiers source (dictionnaire, enregistrement i18next, union `Language`, normalisation des
+réglages, collation de tri, entrée du sélecteur). Procédure détaillée, ancres comprises :
+[docs/AUTRES-LANGUES.md](docs/AUTRES-LANGUES.md) · [English](docs/OTHER-LANGUAGES.md).
+
+Une réserve, dite franchement : les **scripts** s'appellent `…-FR` et l'outillage de mise à jour
+(`outils/`) code en dur `fr.json`, le code `fr` et le nommage des releases. L'adapter à une autre
+langue est un renommage, pas de la magie — le guide liste chaque endroit.
+
 ## Limites connues
 
 - Traduction **assistée** : certains textes d'aide très longs restent perfectibles.
@@ -113,6 +133,7 @@ certutil -hashfile cc-switch.exe SHA256
 |---|---|
 | Notice d'origine (contenu, options, limites) | [docs/LISEZ-MOI.txt](docs/LISEZ-MOI.txt) |
 | Méthode de francisation et mise à jour | [docs/METHODE.md](docs/METHODE.md) |
+| Adapter à une autre langue | [docs/AUTRES-LANGUES.md](docs/AUTRES-LANGUES.md) · [English](docs/OTHER-LANGUAGES.md) |
 | Contribuer | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Sécurité | [SECURITY.md](SECURITY.md) |
 | Historique | [CHANGELOG.md](CHANGELOG.md) |
@@ -121,16 +142,4 @@ certutil -hashfile cc-switch.exe SHA256
 
 [MIT](LICENSE), comme le projet d'origine. Attribution et limites dans [NOTICE.md](NOTICE.md).
 
----
-
-<details>
-<summary><strong>English summary</strong></summary>
-
-French translation of **CC Switch 4.0.14** (`farion1231/cc-switch`, MIT). The UI is fully
-translated, French is the default language, and the six original languages remain available.
-The repository holds the modified sources, the full patch, the installation/update/restore
-scripts and the francisation tooling. The compiled `cc-switch.exe` is published as a release
-asset, not versioned. Update path: `Mettre-a-jour-CC-Switch-FR.bat` rebuilds from upstream
-sources (needs Git, Node.js, pnpm, Rust, Python, MSVC). Not affiliated with the upstream project.
-
-</details>
+Version anglaise : [README.en.md](README.en.md).

@@ -1,5 +1,16 @@
 # Journal des versions
 
+## Documentation — 2026-10-17 (aucun changement de version)
+
+- Ajout de **`README.en.md`** : notice anglaise complète, écrite pour un lecteur anglophone
+  (installation, reconstruction, restauration, limites, intégrité).
+- Le README français renvoie vers la version anglaise et ne duplique plus le résumé.
+- Nouvelle section **« Autres langues »** dans les deux README : le mécanisme ajoute une locale,
+  il n'est pas lié au français.
+- Nouveaux guides : `docs/AUTRES-LANGUES.md` (français) et `docs/OTHER-LANGUAGES.md` (anglais),
+  avec les ancres exactes des six fichiers à modifier et la liste de ce qui reste câblé sur `fr`
+  dans les scripts et l'outillage.
+
 ## v4.0.14-fr.1 — 2026-10-17
 
 **Première publication de la traduction française.**
