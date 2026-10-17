@@ -1,0 +1,15 @@
+# Binaires : jamais dans le dépôt (publiés en release)
+*.exe
+old/
+
+# Produits de compilation
+node_modules/
+target/
+dist/
+build/
+
+# Divers
+*.log.bak
+Thumbs.db
+desktop.ini
+.DS_Store

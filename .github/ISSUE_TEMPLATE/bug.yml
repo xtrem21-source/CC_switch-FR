@@ -1,0 +1,63 @@
+name: Signaler un problème
+description: Chaîne non traduite, script en échec, interface restée en anglais…
+title: "[probleme] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de décrire précisément ce qui s'est passé.
+        **Ne joignez pas de binaire, de jeton ni de capture contenant une clé API.**
+
+  - type: input
+    id: version
+    attributes:
+      label: Version de CC Switch
+      description: Visible dans À propos, ou contenu de `VERSION`.
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Version de Windows
+      placeholder: Windows 11 23H2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: script
+    attributes:
+      label: Script utilisé
+      options:
+        - Appliquer-CC-Switch-FR.bat
+        - Mettre-a-jour-CC-Switch-FR.bat
+        - Restaurer-CC-Switch.bat
+        - aucun (installation manuelle)
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Message ou extrait de journal
+      description: Copiez la sortie console, ou l'extrait utile de `journaux\maj-*.log`.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Vérifications
+      options:
+        - label: J'ai relu `docs/LISEZ-MOI.txt` et `docs/METHODE.md`
+        - label: L'empreinte du binaire correspond à `SHA256SUMS.txt`
+        - label: Aucune donnée personnelle ni secret n'est inclus dans ce rapport
