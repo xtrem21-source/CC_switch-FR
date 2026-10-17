@@ -1,0 +1,12 @@
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+*.log text eol=lf
+*.patch text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.exe binary

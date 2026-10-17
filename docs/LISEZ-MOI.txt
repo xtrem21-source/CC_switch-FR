@@ -1,0 +1,130 @@
+CC SWITCH - VERSION FRANÇAISE (4.0.14)
+=====================================
+
+Ce dossier contient la version française de CC Switch 4.0.14
+(interface entièrement traduite, démarrage en français par défaut)
+et tout ce qu'il faut pour l'appliquer, la mettre à jour ou revenir
+en arrière.
+
+CONTENU
+-------
+  Mettre-a-jour-CC-Switch-FR.bat   Met à jour vers la dernière version (double-clic)
+  Appliquer-CC-Switch-FR.bat       Applique le patch (double-clic)
+  Restaurer-CC-Switch.bat          Remet la version officielle
+  patch\cc-switch.exe              Le programme compilé, interface française
+  old\cc-switch.exe                Programme officiel de cette version (restauration)
+  old\4.0.14\                      Version française installée avant la mise à jour
+  old\4.0.12\cc-switch.exe         Sauvegarde de l'ancienne version 4.0.12
+  old\settings.json                Sauvegarde de votre configuration d'origine
+  fichiers-modifies\               Sources modifiées
+  fichiers-modifies\cc-switch-fr.patch   Diff complet (git apply)
+  fichiers-modifies\version.txt    Version à laquelle correspond le patch
+  outils\                          Scripts utilisés par la mise à jour
+  journaux\                        Journaux des mises à jour
+
+COMMENT APPLIQUER
+-----------------
+  1. Fermez CC Switch s'il est ouvert.
+  2. Double-cliquez sur « Appliquer-CC-Switch-FR.bat ».
+  3. Le script sauvegarde l'existant, installe la version française,
+     passe la langue en français et relance le programme.
+
+  Aucun droit administrateur n'est nécessaire.
+
+MISE À JOUR AUTOMATIQUE
+-----------------------
+  Double-cliquez sur « Mettre-a-jour-CC-Switch-FR.bat ».
+
+  Le script :
+    1. regarde la dernière version publiée sur GitHub ;
+    2. télécharge les sources correspondantes ;
+    3. ré-applique la francisation (correctif exact, ou règles de repli
+       si le code a changé) ;
+    4. traduit les nouvelles chaînes apparues dans l'interface ;
+    5. recompile l'application ;
+    6. installe le résultat, remet la langue en français et relance.
+
+  Si la version installée est déjà la dernière, il ne fait rien.
+
+  Durée : 3 à 5 minutes la première fois, 1 à 3 minutes ensuite
+  (les compilations suivantes réutilisent le cache).
+
+  Si une étape échoue, RIEN n'est modifié sur l'installation : le
+  programme reste exactement dans son état précédent et le journal
+  indique l'étape fautive (dossier journaux\).
+
+  Prérequis : git, Node.js, pnpm, Rust (cargo), Python et le compilateur
+  C++ de Visual Studio. Le script les vérifie et propose de les installer
+  (voir la section suivante).
+
+  Options (en ligne de commande, à ajouter après le nom du fichier) :
+    -Force       reconstruit même si la version est déjà à jour
+    -NoInstall   compile sans rien installer (test à blanc)
+    -NoLaunch    ne relance pas l'application à la fin
+    -NoDownload  ne télécharge pas l'installateur officiel
+  Exemple : Mettre-a-jour-CC-Switch-FR.bat -Force
+
+VÉRIFICATION DES PRÉREQUIS
+--------------------------
+  Au lancement, le script vérifie que tout ce qu'il faut pour compiler
+  est présent : Git, Node.js, pnpm, Rust, Python et le compilateur C++
+  de Visual Studio.
+
+  S'il manque quelque chose, il demande « Installer ces outils
+  maintenant ? (O/N) » et, si tu réponds O, lance l'installation via
+  winget. Le PATH de la session est rechargé automatiquement : pas
+  besoin de fermer puis rouvrir la fenêtre.
+
+    - Git, Node.js, pnpm, Rust, Python : installation silencieuse,
+      quelques minutes.
+    - Compilateur C++ : environ 4 Go, 10 à 20 minutes, Windows demande
+      l'autorisation administrateur.
+
+  Si winget n'est pas disponible, ou si tu réponds N, le script affiche
+  les liens de téléchargement officiels et s'arrête sans rien modifier.
+
+COMMENT REVENIR EN ARRIÈRE
+--------------------------
+  Double-cliquez sur « Restaurer-CC-Switch.bat » (retour à la 4.0.14
+  officielle). Pour revenir à la 4.0.12, copiez old\4.0.12\cc-switch.exe
+  dans %LOCALAPPDATA%\Programs\CC Switch\.
+
+CE QUI A ÉTÉ MODIFIÉ
+--------------------
+  - Ajout de la langue « fr » : src\i18n\locales\fr.json (4 200 clés).
+  - Enregistrement dans i18next + langue par défaut = français
+    (src\i18n\index.ts), avec mise à jour de <html lang>.
+  - Option « Français » dans Paramètres → Langue, pour les 6 langues.
+  - Type Language étendu (src\types.ts, src\hooks\useSettingsForm.ts).
+  - Tri alphabétique localisé fr-FR (src\hooks\useDragSort.ts).
+  - Lexique harmonisé : « fournisseur » partout (plus de « prestataire »),
+    « Session » et non « Séance », « Enregistrer » et non « Sauvegarder »,
+    « Effacer » et non « Clair », « Minimiser la fenêtre », etc.
+
+  L'application est recompilée depuis les sources officielles v4.0.14
+  (licence MIT, dépôt farion1231/cc-switch).
+
+VÉRIFICATIONS EFFECTUÉES
+------------------------
+  - Mise à jour officielle 4.0.12 → 4.0.14 appliquée et vérifiée.
+  - Patch français appliqué sur la 4.0.14, puis interface contrôlée en
+    direct : langue = fr, menus et pages en français.
+  - Script de mise à jour testé de bout en bout : téléchargement,
+    francisation, compilation, installation, relance — interface
+    française au redémarrage (langue = fr, aucun texte anglais résiduel
+    sur les écrans vérifiés).
+
+LIMITES CONNUES
+---------------
+  - Traduction assistée : l'interface courante est entièrement en
+    français, mais certains textes d'aide très longs restent perfectibles.
+  - Le correctif est lié à une version : si l'interface évolue beaucoup,
+    la francisation s'applique par règles et quelques phrases peuvent
+    demander une relecture. Les chaînes non traduites s'affichent
+    automatiquement en anglais (jamais de texte vide ni d'erreur).
+  - Les noms propres (Claude, Codex, fournisseurs, modèles) restent tels quels.
+  - Le menu de la zone de notification Windows n'est pas concerné.
+
+DÉSINSTALLATION
+---------------
+  « Restaurer-CC-Switch.bat », puis supprimez ce dossier.

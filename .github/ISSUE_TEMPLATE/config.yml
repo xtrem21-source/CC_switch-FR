@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Notice et méthode
+    url: https://github.com/xtrem21-source/CC_switch-FR/tree/main/docs
+    about: Notice d'origine, méthode de francisation, limites connues.
+  - name: Signaler une vulnérabilité
+    url: https://github.com/xtrem21-source/CC_switch-FR/security/advisories/new
+    about: En privé, jamais en issue publique.
+  - name: Dernière release
+    url: https://github.com/xtrem21-source/CC_switch-FR/releases/latest
+    about: Binaire français et SHA256SUMS.
+  - name: Projet d'origine
+    url: https://github.com/farion1231/cc-switch
+    about: Pour un bug de l'application elle-même.
